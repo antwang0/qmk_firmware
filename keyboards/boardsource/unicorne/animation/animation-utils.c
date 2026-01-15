@@ -21,7 +21,7 @@
 #    define ANIM_BG 0x00
 #endif
 #ifndef ANIM_FRAME_TIME
-#    define ANIM_FRAME_TIME 250
+#    define ANIM_FRAME_TIME 125
 #endif
 
 #define OLED_DIDSPLAY_HEIGHT = 32
