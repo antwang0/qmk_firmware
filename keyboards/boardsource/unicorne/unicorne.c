@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include "quantum.h"
 #include "lib/oled.h"
+#include "animation/crab.c"
+#include "animation/spiral_js.c"
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
@@ -16,9 +18,12 @@ bool oled_task_kb(void) {
         return false;
     }
     if (is_keyboard_master()) {
-        render_layer_state();
+        // render_layer_state();
+        oled_render_anim_spiral_js();
     } else {
-        oled_write_raw_P(bs_logo_img, sizeof(bs_logo_img));
+        oled_render_anim_crab();
+        // oled_write_raw_P(bs_logo_img, sizeof(bs_logo_img));
+
     }
     return false;
 }
