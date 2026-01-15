@@ -17,7 +17,7 @@
 //-------- CONFIGURATION END--------
 
 #define ANIM_SIZE_SPIRAL 1024
-#define ANIM_FRAME_TIME_SPIRAL 200
+#define ANIM_FRAME_TIME_SPIRAL 30
 
 static void oled_render_anim_spiral_js(void) {
     // 128x32
@@ -267,6 +267,6 @@ static void oled_render_anim_spiral_js(void) {
         anim_timer        = timer_read32();
         const char *frame = speed > FAST_TYPE_WPM ? FAST_TYPE_FRAMES[current_frame] : SLOW_TYPE_FRAMES[current_frame];
         oled_write_raw_P(frame, ANIM_SIZE_SPIRAL);
-        current_frame = (current_frame + 1) % 3;
+        current_frame = (current_frame + 1) % 32;
     }
 }

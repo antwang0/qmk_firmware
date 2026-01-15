@@ -19,11 +19,12 @@ bool oled_task_kb(void) {
     }
     if (is_keyboard_master()) {
         // render_layer_state();
-        oled_render_anim_spiral_js();
-    } else {
+        // oled_render_anim_spiral_js();
         oled_render_anim_crab();
+    } else {
+        // oled_render_anim_crab();
+        oled_render_anim_spiral_js();
         // oled_write_raw_P(bs_logo_img, sizeof(bs_logo_img));
-
     }
     return false;
 }
